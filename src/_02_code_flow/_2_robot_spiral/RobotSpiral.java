@@ -5,6 +5,8 @@ package _02_code_flow._2_robot_spiral;
  */
 
 
+import java.awt.Color;
+
 import org.jointheleague.graphical.robot.Robot;
 
 public class RobotSpiral {
@@ -15,6 +17,19 @@ public class RobotSpiral {
 		rob.penDown();
 		
 		rob.setSpeed(100);
+		
+		int count = 0;
+		
+		while (count < 50) {
+			
+		rob.setRandomPenColor();
+		
+		rob.move(5*count);
+		
+		rob.turn(360/7);
+		
+		count += 1;
+		}
 		
 		
 		// Create a new Robot

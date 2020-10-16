@@ -11,6 +11,32 @@ public class PentagonCrazy {
 	
 	public static void main(String[] args) {
 		
+		Robot rob = new Robot();
+		
+		rob.penDown();
+		
+		rob.setSpeed(100);
+		
+		rob.setPenColor(Color.BLACK);
+		
+		int sides = 5;
+				
+		int angle = 360/sides;
+		
+		int count = 0;
+		
+		while(count < 200) {
+		
+		rob.move(count);
+		
+		rob.turn(angle + 1);
+		
+		count += 1;
+		
+		}
+		
+		rob.hide();
+		
 		//  Create a new Robot
 
 		//  Put the robot's pen down

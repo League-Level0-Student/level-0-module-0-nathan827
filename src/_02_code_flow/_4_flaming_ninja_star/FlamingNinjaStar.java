@@ -9,6 +9,42 @@ public class FlamingNinjaStar {
 		int baseSize = 200;		//the size of the black part of the star
 		int flameSize = 130;		//the length of the flaming arms
 		
+		Robot rob = new Robot();
+		
+		rob.penDown();
+		
+		rob.setSpeed(100);
+		
+		rob.setWindowSize(800,800);
+		
+		int count = 0;
+				
+		while(count < 25) {
+		
+		rob.turn(45);
+		
+		rob.move(64);
+		
+		rob.turn(-40);
+		
+		rob.setPenColor(Color.red);
+		
+		rob.move(flameSize);
+		
+		rob.turn(170);
+		
+		rob.move(flameSize);
+		
+		rob.turn(64);
+		
+		rob.setPenColor(Color.black);
+		
+		rob.move(baseSize);
+		
+		count += 1;
+		
+	}
+		
 		// Make a new robot, and set it's pen down.
 
 		// Set the robot speed to 100
