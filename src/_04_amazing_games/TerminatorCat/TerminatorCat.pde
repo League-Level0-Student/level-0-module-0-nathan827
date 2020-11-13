@@ -9,9 +9,11 @@
 // This line of code creates a variable to hold your faccate picture
 // You will use it later.
 PImage cat;
-int x=0;
-int y=0;
+int x=185;
+int y=205;
 
+int rightx = 306;
+int righty = 220;
 void setup() {
   
 // 2. The code below loads your cat picture into the program. 
@@ -19,13 +21,16 @@ void setup() {
 cat = loadImage("Cat.jpg");
   
 // 3. Set the size of the sketch. Make it big enough to show the cat you chose.
-size(500,500)
+size(500,500);
 // 4. Resize the cat so it is the same size as the sketch
-
+cat.resize(500,500);
 // 5. DRAW CAT.    Use the background() command to make the cat the background of the sketch
 //    Run the program to see if the cat is drawn. Get this working before you go on.
- 
+ background(cat);
 
+fill(23,193,2);
+                ellipse(185, 205, 60, 90);
+                ellipse(306, 220, 55, 85);
   }
 
 void draw() {
@@ -43,7 +48,7 @@ void draw() {
 
 // 8. DRAW CIRCLES.
 //     The circles will have black lines around them by default. Put noStroke(); here to remove them.
-
+noStroke();
 // 9.  COLOR.  Set the color of your ellipse to the laser color you would like
 //    Remember to use the   fill()  command to set colors.
 
@@ -51,8 +56,17 @@ void draw() {
 // 10 Use the ellipse() command to draw a circle on the eye (you will have to guess its size). 
 //    Use the x and y variables you just created to place the ellipse in the correct location.
 //                  The ellipse command looks like this:
-                ellipse(x, y, width, height);
+                fill(#020D01);
+                ellipse(x, y, 20,50);
+                ellipse(rightx, righty, 20,50);
 // Run the program to make sure it is in the right place and is the right size.
+if(x > 500 || y > 500) {
+  x = 185;
+  y = 205;
+  rightx = 306;
+  righty = 220;
+  background(cat);
+}
 }
 
 // 11.  LASER BEAM.  This code will make your ellipse move down and to the right when you press 
@@ -61,6 +75,8 @@ void draw() {
 void keyPressed() {
     x+=1;
     y+=1;
+    rightx+=1;
+    righty+=1;
     
 // 12.  If you want them to go faster, add more than one each time the key is pressed    
 }
